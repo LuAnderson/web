@@ -9,13 +9,20 @@
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier --write **/*.js",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^0.4.0",
     "sveltestrap": "^3.2.8"
+  },
+  "lint-staged": {
+    "*.js": ["npm run prettier", "git add"]
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
@@ -26,6 +33,14 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "prettier": "^1.12.1",
     "rollup": "^1.12.0",
     "rollup-plugin-babel": "^4.0.2",
     "rollup-plugin-commonjs": "^10.0.0",
