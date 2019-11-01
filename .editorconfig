@@ -3,10 +3,18 @@
 # top-most EditorConfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
-[*]
 charset = utf-8
 end_of_line = lf
-insert_final_newline = true
+indent_size = 2
 indent_style = space
-indent_size = 4
+
+# while saving
+insert_final_newline = true
+max_line_length = 80
+
+# any whitespace character preceding a newline to be trimmed
+trim_trailing_whitespace = true
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false 
